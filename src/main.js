@@ -14,33 +14,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 // Element personnalisé: Icone
-var Icon = /** @class */ (function (_super) {
-    __extends(Icon, _super);
-    function Icon() {
+var CustomIcon = /** @class */ (function (_super) {
+    __extends(CustomIcon, _super);
+    function CustomIcon() {
         return _super.call(this) || this;
     }
-    Icon.prototype.connectedCallback = function () {
-        // Initialisation du Shadow DOM
-        var shadow = this.attachShadow({ mode: 'open' });
-        // Récuperation des informations
-        var name = this.getAttribute("name");
-        console.log(name);
-        if (name === null)
-            return;
-        var size = this.getAttribute("size");
-        console.log(size);
-        if (size === null)
-            return;
-        var sizeValue = parseInt(size);
-        // Création de l'icone
-        var img = document.createElement("img");
-        img.src = "https://cdn.simpleicons.org/".concat(name, ".svg"); // Assurez-vous d'ajouter l'extension du fichier (par exemple, .svg)
-        img.width = sizeValue;
-        img.height = sizeValue;
-        // Ajout de l'icone au Shadow DOM
-        shadow.appendChild(img);
+    // Méthode appelée lorsque l'élément est ajouté à la page
+    CustomIcon.prototype.connectedCallback = function () {
+        this.innerHTML = "test";
     };
-    return Icon;
+    return CustomIcon;
 }(HTMLElement));
 // Enregistrement de l'élément personnalisé
-customElements.define('custom-icon', Icon);
+window.customElements.define('custom-icon', CustomIcon);
