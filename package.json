@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "typescript:compile": "tsc ./src/main.ts",
+    "typescript:watch": "tsc ./src/main.ts --watch",
+    "tailwind:compile": "npx tailwindcss -i ./src/style.css -o ./src/app.css",
+    "tailwind:watch": "npx tailwindcss -i ./src/style.css -o ./src/app.css --watch"
   }
 }

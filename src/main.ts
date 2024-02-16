@@ -2,7 +2,10 @@
 class Icon extends HTMLElement {
     constructor() {
         super();
+    }
 
+    connectedCallback() {
+        
         // Initialisation du Shadow DOM
         const shadow = this.attachShadow({ mode: 'open' });
 

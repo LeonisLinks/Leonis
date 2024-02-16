@@ -17,18 +17,20 @@ var __extends = (this && this.__extends) || (function () {
 var Icon = /** @class */ (function (_super) {
     __extends(Icon, _super);
     function Icon() {
-        var _this = _super.call(this) || this;
+        return _super.call(this) || this;
+    }
+    Icon.prototype.connectedCallback = function () {
         // Initialisation du Shadow DOM
-        var shadow = _this.attachShadow({ mode: 'open' });
+        var shadow = this.attachShadow({ mode: 'open' });
         // Récuperation des informations
-        var name = _this.getAttribute("name");
+        var name = this.getAttribute("name");
         console.log(name);
         if (name === null)
-            return _this;
-        var size = _this.getAttribute("size");
+            return;
+        var size = this.getAttribute("size");
         console.log(size);
         if (size === null)
-            return _this;
+            return;
         var sizeValue = parseInt(size);
         // Création de l'icone
         var img = document.createElement("img");
@@ -37,8 +39,7 @@ var Icon = /** @class */ (function (_super) {
         img.height = sizeValue;
         // Ajout de l'icone au Shadow DOM
         shadow.appendChild(img);
-        return _this;
-    }
+    };
     return Icon;
 }(HTMLElement));
 // Enregistrement de l'élément personnalisé
