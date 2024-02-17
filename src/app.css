@@ -606,6 +606,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -640,6 +644,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -711,4 +719,125 @@ body {
 
 * {
   color: white;
+}
+
+@media (max-width: 1670px) {
+  .max-\[1670px\]\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
+  .max-\[1670px\]\:w-full {
+    width: 100%;
+  }
+
+  .max-\[1670px\]\:flex-col {
+    flex-direction: column;
+  }
+
+  .max-\[1670px\]\:text-center {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1150px) {
+  .max-\[1150px\]\:w-\[60vw\] {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 810px) {
+  .max-\[810px\]\:w-\[80vw\] {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 610px) {
+  .max-\[610px\]\:w-\[90vw\] {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .max-\[600px\]\:w-\[90vw\] {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 470px) {
+  .max-\[470px\]\:m-2 {
+    margin: 0.5rem;
+  }
+
+  .max-\[470px\]\:w-\[100vw\] {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 430px) {
+  .max-\[430px\]\:h-\[32px\] {
+    height: 32px;
+  }
+
+  .max-\[430px\]\:h-\[55px\] {
+    height: 55px;
+  }
+
+  .max-\[430px\]\:w-\[32px\] {
+    width: 32px;
+  }
+
+  .max-\[430px\]\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .max-\[430px\]\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .max-\[430px\]\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .max-\[430px\]\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .max-\[430px\]\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .max-\[390px\]\:h-\[55px\] {
+    height: 55px;
+  }
+
+  .max-\[390px\]\:h-\[32px\] {
+    height: 32px;
+  }
+
+  .max-\[390px\]\:w-\[32px\] {
+    width: 32px;
+  }
+
+  .max-\[390px\]\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .max-\[390px\]\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 1670px) {
+  .min-\[1670px\]\:flex-col {
+    flex-direction: column;
+  }
 }
