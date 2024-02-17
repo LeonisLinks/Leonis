@@ -578,8 +578,16 @@ video {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 .relative {
   position: relative;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .mb-10 {
@@ -636,6 +644,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-row {
@@ -812,6 +824,15 @@ body.blurred #effect {
   backdrop-filter: blur(var(--background-blur));
   -webkit-backdrop-filter: blur(var(--background-blur));
   background: #00000040;
+}
+
+body.music-include #music {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.music-include #container {
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 @media (max-width: 1670px) {
