@@ -586,6 +586,10 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -604,10 +608,6 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
 }
 
 .flex {
@@ -670,10 +670,6 @@ video {
   padding: 1.25rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -698,19 +694,24 @@ video {
   font-weight: 700;
 }
 
-body {
-  background: linear-gradient(
+:root {
+  --text-layout: center;
+  --background: url(../public/background.png);
+  --background-effect: linear-gradient(
             rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7)
-    ), url(/public/background.png);
+    );
+  --background-blur: 5px;
+  --profile-blur: 10px;
+  --profile-opacity: 0.2;
 }
 
 #container {
   border-radius: 50px;
   padding: 100px;
-  background: rgba(27, 27, 27, 0.5);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background: rgba(27, 27, 27, var(--profile-opacity));
+  -webkit-backdrop-filter: blur(var(--profile-blur));
+  backdrop-filter: blur(var(--profile-blur));
 }
 
 #discord {
@@ -719,6 +720,98 @@ body {
 
 * {
   color: white;
+}
+
+#name, #description {
+  text-align: var(--text-layout);
+}
+
+/* Name Effect */
+
+/*
+    Available Effects:
+    - Flash
+    - Rainbow
+ */
+
+/* Flash Name */
+
+body.name-flash #name {
+  text-shadow: 0px 0px 16.5px #FFFFFF;
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0% {
+    text-shadow: 0px 0px 16.5px #FFFFFF;
+  }
+
+  50% {
+    text-shadow: 0px 0px 16.5px #FFFFFF, 0px 0px 16.5px #FFFFFF;
+  }
+
+  100% {
+    text-shadow: 0px 0px 16.5px #FFFFFF;
+  }
+}
+
+/* Rainbow Name */
+
+body.name-rainbow #name {
+  background-image: linear-gradient(90deg,violet,indigo,blue,green,#ff0,orange,red)!important;
+  background-size: 1400% 100%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: rainbow 6s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Background Effect */
+
+/* Available Effects:
+    - Night Time
+    - Old TV
+    - Blurred
+ */
+
+#effect {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 1;
+  position: fixed;
+}
+
+body.nighttime {
+  background: var(--background-effect), var(--background);
+}
+
+body:not(.nighttime) {
+  background: var(--background);
+}
+
+body.oldtv #effect {
+  background-image: url(../public/dot.png);
+  background-position-x: 0;
+  background-position-y: 0;
+  background-repeat: repeat;
+  background-color: transparent;
+}
+
+body.blurred #effect {
+  backdrop-filter: blur(var(--background-blur));
+  -webkit-backdrop-filter: blur(var(--background-blur));
+  background: #00000040;
 }
 
 @media (max-width: 1670px) {
@@ -757,12 +850,6 @@ body {
   }
 }
 
-@media (max-width: 600px) {
-  .max-\[600px\]\:w-\[90vw\] {
-    width: 90vw;
-  }
-}
-
 @media (max-width: 470px) {
   .max-\[470px\]\:m-2 {
     margin: 0.5rem;
@@ -774,23 +861,6 @@ body {
 }
 
 @media (max-width: 430px) {
-  .max-\[430px\]\:h-\[32px\] {
-    height: 32px;
-  }
-
-  .max-\[430px\]\:h-\[55px\] {
-    height: 55px;
-  }
-
-  .max-\[430px\]\:w-\[32px\] {
-    width: 32px;
-  }
-
-  .max-\[430px\]\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .max-\[430px\]\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -800,25 +870,15 @@ body {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
-
-  .max-\[430px\]\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .max-\[430px\]\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
 }
 
 @media (max-width: 390px) {
-  .max-\[390px\]\:h-\[55px\] {
-    height: 55px;
-  }
-
   .max-\[390px\]\:h-\[32px\] {
     height: 32px;
+  }
+
+  .max-\[390px\]\:h-\[55px\] {
+    height: 55px;
   }
 
   .max-\[390px\]\:w-\[32px\] {
@@ -833,11 +893,5 @@ body {
   .max-\[390px\]\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
-  }
-}
-
-@media (min-width: 1670px) {
-  .min-\[1670px\]\:flex-col {
-    flex-direction: column;
   }
 }
