@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map</title>
+
+  <style>
+      * {
+          margin: 0;
+      }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+  <div id="map" style="width: 100%; height: 100vh; position: relative; outline-style: none;"></div>
+  <script>
+    let mymap = L.map('map').setView([48.569045,7.6796789], 6);
+
+    mymap.touchZoom.disable();
+    mymap.doubleClickZoom.disable();
+    mymap.scrollWheelZoom.disable();
+    mymap.boxZoom.disable();
+    mymap.keyboard.disable();
+    mymap.zoomControl.remove();
+    mymap.dragging.disable();
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+	    minZoom: 10,
+	    maxZoom: 10,
+	    attribution: undefined,
+    }).addTo(mymap);
+
+    L.marker([48.569045,7.6796789]).addTo(mymap)
+  </script>
+</body>
+</html>

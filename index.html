@@ -5,23 +5,30 @@
   <title>Leonis</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <script src="src/main.js"></script>
   <script src="src/custom-elements.js" type="module"></script>
   <link href="./src/app.css" rel="stylesheet">
+
 </head>
-<body class="w-screen h-screen">
-  <div id="container">
-    <h1 id="name">Leonis</h1>
-    <p id="description">A simple and fast bio link</p>
-    <div id="socials">
-      <div id="discord">
-
+<body class="w-screen h-screen flex justify-center items-center">
+  <div id="container" class="w-[40vw]">
+    <h1 id="name" class="text-5xl font-bold text-center">Leonis</h1>
+    <p id="description" class="text-3xl text-center mb-10">A simple and fast bio link</p>
+    <div id="socials" class="flex flex-row justify-center">
+      <div id="discord" class="p-5 rounded-xl w-[50%] mr-2 ml-2 flex flex-row">
+        <img src="https://cdn.discordapp.com/avatars/902671568856047636/df9b91c56efa46acd37844b6313c4090.png?size=1024" class="rounded-full xl" width="64px" height="64px" alt="orion_off">
+        <div id="informations" class="flex flex-col ml-5">
+          <span id="discord_name" class="text-2xl">orion_off</span>
+          <span id="discord_status" class="text-xl">Elsässisch</span>
+        </div>
       </div>
-      <div id="spotify">
-
+      <div id="geo" class="w-[50%] mr-2 ml-2 rounded-xl">
+        <iframe src="map.html" class="w-full h-[105px] rounded-xl"></iframe>
       </div>
     </div>
-    <div id="links">
-      <custom-icon name="twitter" size="32"></custom-icon>
+    <div id="links" class="flex flex-row justify-center mt-5">
+      <a href="https://twitter.com/orion_offi" target="_blank" class="mr-5"><custom-icon name="twitter" size="32" color="#1D9BF0"></custom-icon></a>
+      <a href="https://instagram.com/oriondev.fr" target="_blank" class="mr-5"><custom-icon name="instagram" size="32" color="#E4405F"></custom-icon></a>
     </div>
   </div>
 </body>

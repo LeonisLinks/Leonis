@@ -9,10 +9,11 @@ class CustomIcon extends HTMLElement {
 		// Récuperer les attributs name et size
 		const name = this.getAttribute('name');
 		const size = this.getAttribute('size') || '24';
+		const color = this.getAttribute('color') || 'white';
 		if (!name) return;
 
 		// Créer un élément img
-		this.innerHTML = `<img src="https://cdn.simpleicons.org/${name}" alt="${name}" width="${size}" height="${size}">`;
+		this.innerHTML = `<img src="https://cdn.simpleicons.org/${name}" alt="${name}" width="${size}" height="${size}" class="custom-icons" style="filter: drop-shadow(${color} 1px 0 7px);">`;
 	}
 }
 
