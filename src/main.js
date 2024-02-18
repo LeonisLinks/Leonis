@@ -2,6 +2,7 @@ var music = document.querySelector('#music-play');
 var musicContainer = document.querySelector('#music');
 var container = document.querySelector('#container');
 var musicControl = document.querySelector('#music-control');
+var description = document.querySelector('#description');
 musicContainer.onclick = function () {
     music.play();
     music.loop = true;
@@ -22,5 +23,12 @@ musicContainer.onclick = function () {
         feather.replace();
     };
 };
+if (document.body.classList.contains("description-typewrite")) {
+    var typewriter = new Typewriter('#description', {
+        strings: [description.innerHTML],
+        autoStart: true,
+        loop: true
+    });
+}
 // @ts-ignore
 feather.replace();

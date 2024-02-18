@@ -2,6 +2,7 @@ const music: HTMLAudioElement = document.querySelector('#music-play');
 const musicContainer: HTMLDivElement = document.querySelector('#music');
 const container: HTMLDivElement = document.querySelector('#container');
 const musicControl: HTMLDivElement = document.querySelector('#music-control');
+const description: HTMLSpanElement = document.querySelector('#description');
 
 musicContainer.onclick = () => {
   music.play();
@@ -22,6 +23,15 @@ musicContainer.onclick = () => {
     // @ts-ignore
     feather.replace();
   }
+}
+
+if (document.body.classList.contains("description-typewrite")) {
+
+  const typewriter = new Typewriter('#description', {
+    strings: [description.innerHTML],
+    autoStart: true,
+    loop: true
+  });
 }
 
 // @ts-ignore
