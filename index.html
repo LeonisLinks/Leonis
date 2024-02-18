@@ -8,13 +8,16 @@
   <script src="./src/main.js" defer></script>
   <script src="./src/custom-elements.js"></script>
   <link href="./src/app.css" rel="stylesheet">
-
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="w-screen h-screen flex justify-center items-center nighttime name-rainbow music-include">
   <div id="effect"></div>
   <div id="music" class="fixed w-screen h-screen z-10 flex justify-center items-center cursor-pointer">
     <h1 class="text-5xl">Ouais clique stp</h1>
     <audio id="music-play" src="./public/music.mp3" loop></audio>
+  </div>
+  <div id="music-control">
+    <i data-feather="volume-2"></i>
   </div>
   <div id="container" class="w-[40vw]  max-[1150px]:w-[60vw] max-[810px]:w-[80vw] max-[610px]:w-[90vw] max-[470px]:w-[100vw] max-[470px]:m-2 flex flex-col">
     <h1 id="name" class="text-5xl font-bold">Leonis</h1>

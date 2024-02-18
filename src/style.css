@@ -117,11 +117,35 @@ body.blurred #effect {
     background: #00000040;
 }
 
+/* Music Effect */
+body:not(.music-include) #music, body:not(.music-include) #music-control {
+    display: none;
+}
+
 body.music-include #music {
     background: rgba(0, 0, 0, 0.7);
 }
 
-body.music-include #container {
+body.music-include #container, body.music-include #music-control {
     opacity: 0;
     transition: opacity 1s;
+}
+
+body.music-include #music-control {
+    background: rgba(27, 27, 27, var(--profile-opacity));
+    -webkit-backdrop-filter: blur(var(--profile-blur));
+    backdrop-filter: blur(var(--profile-blur));
+    padding: 10px;
+    border-radius: 10px;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+body.music-include #music-control svg {
+    width: 48px;
+    height: 48px;
 }
