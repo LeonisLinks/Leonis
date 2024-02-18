@@ -2,7 +2,13 @@ const music: HTMLAudioElement = document.querySelector('#music-play');
 const musicContainer: HTMLDivElement = document.querySelector('#music');
 const container: HTMLDivElement = document.querySelector('#container');
 const musicControl: HTMLDivElement = document.querySelector('#music-control');
-const description: HTMLSpanElement = document.querySelector('#description');
+const information: HTMLDivElement = document.querySelector('#information');
+
+let n: string = "Leonis";
+let d: string = "A simple and fast bio link"
+
+/* let leftAndRightTemplate: string = ``;
+let centerTemplate: string = ``; */
 
 musicContainer.onclick = () => {
   music.play();
@@ -25,8 +31,11 @@ musicContainer.onclick = () => {
   }
 }
 
-if (document.body.classList.contains("description-typewrite")) {
+let classList: DOMTokenList = document.body.classList;
+const description: HTMLSpanElement = document.querySelector('#description');
 
+if (classList.contains("description-typewrite")) {
+  // @ts-ignore
   const typewriter = new Typewriter('#description', {
     strings: [description.innerHTML],
     autoStart: true,

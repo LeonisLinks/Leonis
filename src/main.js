@@ -2,7 +2,11 @@ var music = document.querySelector('#music-play');
 var musicContainer = document.querySelector('#music');
 var container = document.querySelector('#container');
 var musicControl = document.querySelector('#music-control');
-var description = document.querySelector('#description');
+var information = document.querySelector('#information');
+var n = "Leonis";
+var d = "A simple and fast bio link";
+/* let leftAndRightTemplate: string = ``;
+let centerTemplate: string = ``; */
 musicContainer.onclick = function () {
     music.play();
     music.loop = true;
@@ -23,7 +27,10 @@ musicContainer.onclick = function () {
         feather.replace();
     };
 };
-if (document.body.classList.contains("description-typewrite")) {
+var classList = document.body.classList;
+var description = document.querySelector('#description');
+if (classList.contains("description-typewrite")) {
+    // @ts-ignore
     var typewriter = new Typewriter('#description', {
         strings: [description.innerHTML],
         autoStart: true,

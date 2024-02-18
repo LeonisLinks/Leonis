@@ -594,6 +594,10 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -707,7 +711,7 @@ video {
 }
 
 :root {
-  --text-layout: center;
+  --text-layout: left;
   --background: url(../public/background.png);
   --background-effect: linear-gradient(
             rgba(0, 0, 0, 0.7),
@@ -734,7 +738,7 @@ video {
   color: white;
 }
 
-#name, #description {
+#texts {
   text-align: var(--text-layout);
 }
 
@@ -857,6 +861,29 @@ body.music-include #music-control {
 body.music-include #music-control svg {
   width: 48px;
   height: 48px;
+}
+
+/* Avatar */
+
+#avatar {
+  width: 64px !important;
+  height: 64px !important;
+}
+
+body:not(.avatar-include) #avatar {
+  display: none;
+}
+
+body.nd-center #name, body.nd-center #container {
+  align-items: center;
+}
+
+body.nd-center #information {
+  flex-direction: column;
+}
+
+body:not(.nd-center) #information {
+  flex-direction: row;
 }
 
 @media (max-width: 1670px) {
