@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-    --text-layout: left;
-    --background: url(../public/background.png);
+    --text-layout: {TEXTLAYOUT};
+    --background: url({BACKGROUND});
     --background-effect: linear-gradient(
             rgba(0, 0, 0, 0.7),
             rgba(0, 0, 0, 0.7)
     );
-    --background-blur: 5px;
-    --profile-blur: 10px;
-    --profile-opacity: 0.2;
+    --background-blur: {BACKGROUNDBLUR};
+    --profile-blur: {BLUR};
+    --profile-opacity: {OPACITY};
 }
 
 #container {
