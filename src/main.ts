@@ -43,5 +43,25 @@ if (classList.contains("description-typewrite")) {
   });
 }
 
+if (document.getElementById("discord")) {
+  let discordElement: HTMLElement = document.getElementById("discord");
+  let nameElement: HTMLSpanElement = document.getElementById("discord_name");
+  let avatarElement: HTMLImageElement = discordElement.querySelector("img");
+  let statusElement: HTMLSpanElement = document.getElementById("discord_status");
+
+  // @ts-ignore
+  async function fetchDiscord() {
+    let res = await fetch("{API}/discord?i={DISCORDID}");
+    let data = await res.json();
+    nameElement.innerHTML = data.username;
+    avatarElement.src = data.avatar;
+    statusElement.innerHTML = data.status;
+  }
+
+  // @ts-ignore
+  setInterval(fetchDiscord, 60000);
+  fetchDiscord();
+}
+
 // @ts-ignore
 feather.replace();
