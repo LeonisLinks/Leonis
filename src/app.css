@@ -670,6 +670,10 @@ video {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -684,6 +688,10 @@ video {
 
 .p-5 {
   padding: 1.25rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-2xl {
