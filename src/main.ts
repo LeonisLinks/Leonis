@@ -55,6 +55,7 @@ if (document.getElementById("discord")) {
     let data = await res.json();
     nameElement.innerHTML = data.username;
     avatarElement.src = data.avatar;
+    avatarElement.alt = data.username;
     statusElement.innerHTML = data.status;
   }
 
