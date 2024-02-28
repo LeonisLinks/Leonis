@@ -7,8 +7,6 @@ const information: HTMLDivElement = document.querySelector('#information');
 let n: string = "Leonis";
 let d: string = "A simple and fast bio link"
 
-/* let leftAndRightTemplate: string = ``;
-let centerTemplate: string = ``; */
 
 musicContainer.onclick = () => {
   music.play();
@@ -41,6 +39,26 @@ if (classList.contains("description-typewrite")) {
     autoStart: true,
     loop: true
   });
+}
+
+if (document.getElementById("discord")) {
+  let discordElement: HTMLElement = document.getElementById("discord");
+  let nameElement: HTMLSpanElement = document.getElementById("discord_name");
+  let avatarElement: HTMLImageElement = discordElement.querySelector("img");
+  let statusElement: HTMLSpanElement = document.getElementById("discord_status");
+
+  // @ts-ignore
+  async function fetchDiscord() {
+    let res = await fetch("http://localhost:3000/discord?i=902671568856047636");
+    let data = await res.json();
+    nameElement.innerHTML = data.username;
+    avatarElement.src = data.avatar;
+    statusElement.innerHTML = data.status;
+  }
+
+  // @ts-ignore
+  setInterval(fetchDiscord, 60000);
+  fetchDiscord();
 }
 
 // @ts-ignore
